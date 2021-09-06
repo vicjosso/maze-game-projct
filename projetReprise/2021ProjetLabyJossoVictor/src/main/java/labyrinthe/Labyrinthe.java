@@ -24,6 +24,7 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         largeur=f.lireNombre(); 
         hauteur=f.lireNombre(); 
         // ...
+        
     }
 
     @Override
