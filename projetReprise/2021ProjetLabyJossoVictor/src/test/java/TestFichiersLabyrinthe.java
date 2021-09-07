@@ -59,6 +59,8 @@ public class TestFichiersLabyrinthe {
         return true;
     }
 
+    
+    //passe les tests sans erreur alors que cela devrait
     @Test
     public void testCoordonneesSalles() {
         File repertoire = new File("labys/");
@@ -87,7 +89,9 @@ public class TestFichiersLabyrinthe {
     }
 
     //vérifier le contenu de fonction
+    //passe les tests sans renvoyer d'erreur alors que cela devrait
     public boolean testPasDeDoublonFichier(File file) {
+        Fichier f;
         f = new Fichier(file.toString());
 
         //créer d'un labyrinthe de comparaison
@@ -112,10 +116,10 @@ public class TestFichiersLabyrinthe {
         File repertoire = new File("labys/");
         File[] fichiers = getFiles(repertoire);
 
-        Fichier f;
-
         for (File file : fichiers) {
+            System.out.println("test du fichier " + file.getName() +" en cours");
             assertTrue(testPasDeDoublonFichier(file));
+            System.out.println("test fini");
         }
     }
 
