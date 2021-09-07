@@ -27,40 +27,34 @@ public class TestFichiersLabyrinthe {
     //vérification de nombre négatif
     public boolean testCoordonneesSallesFichier(File f) {
 
-        String nomFichier = f.getName();
+        String nomFichier = f.getPath();
         Fichier fichier = new Fichier(nomFichier);
 
         if (!nomFichier.endsWith(".txt")) {
             return false;
         }
 
-        //try catch inutile car aucun moyen d'avoir un retour de lettre, retour par défaut -1 
         //trouver un moyen de faire la différence entre retour dû à une erreur et dû à la fin du fichier
-        try {
-            int l;
-            int h;
-            int cpt = 0;
-            while (cpt != -1) {
-                cpt = fichier.lireNombre();
-                if (cpt == -1) {
-                    break;
-                }
-                l = cpt;
-                h = fichier.lireNombre();
-                if (l < 0 || h < 0) {
-                    return false;
-                }
+        int l = fichier.lireNombre();
+        int h = fichier.lireNombre();
+        int x;
+        int y;
+        int cpt = 0;
+        while (cpt != -1) {
+            cpt = fichier.lireNombre();
+            if (cpt == -1) {
+                break;
             }
-        } catch (Exception e) { //Exception inutile car pas de retour autre que chiffre
-            System.err.println(e);
-            return false;
+            x = cpt;
+            y = fichier.lireNombre();
+            if (x < 0 || y < 0 || x > l || y > h) {
+                return false;
+            }
         }
 
         return true;
     }
 
-    
-    //passe les tests sans erreur alors que cela devrait
     @Test
     public void testCoordonneesSalles() {
         File repertoire = new File("labys/");
@@ -69,22 +63,9 @@ public class TestFichiersLabyrinthe {
         Fichier f;
 
         for (File file : fichiers) {
-            if (testCoordonneesSallesFichier(file)) {
                 System.out.println("test du fichier" + file.toString());
-
-                f = new Fichier(file.toString());
-
-                int longueur = f.lireNombre();
-                int hauteur = f.lireNombre();
-
-                Salle entree = new Salle(f.lireNombre(), f.lireNombre());
-                Salle sortie = new Salle(f.lireNombre(), f.lireNombre());
-
-                assertTrue(entree.getX() > 0 && longueur >= entree.getX() && sortie.getX() > 0 && longueur >= sortie.getX());
-                assertTrue(entree.getY() > 0 && hauteur >= entree.getY() && sortie.getY() > 0 && hauteur >= sortie.getY());
-            } else {
-                System.out.println("fichier " + file.toString() + " invalide");
-            }
+                if(file.getName().contains("nvalid")) continue;
+                assertTrue(testCoordonneesSallesFichier(file)); //erreur logique
         }
     }
 
@@ -110,15 +91,17 @@ public class TestFichiersLabyrinthe {
         return true;
     }
 
+    
+    //bloque au fichier invalide2 et 7
     @Test
     public void testPasDeDoublon() {
         File repertoire = new File("labys/");
         File[] fichiers = getFiles(repertoire);
 
         for (File file : fichiers) {
-            System.out.println("test du fichier " + file.getName() +" en cours");
+            System.out.println("test du fichier " + file.getName());
+            if(file.getName().contains("nvalid")) continue;
             assertTrue(testPasDeDoublonFichier(file));
-            System.out.println("test fini");
         }
     }
 
