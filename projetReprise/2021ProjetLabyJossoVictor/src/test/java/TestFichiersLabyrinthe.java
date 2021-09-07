@@ -51,7 +51,7 @@ public class TestFichiersLabyrinthe {
                     return false;
                 }
             }
-        } catch (Exception e) { //Exception à finir et rajouter
+        } catch (Exception e) { //Exception inutile car pas de retour autre que chiffre
             System.err.println(e);
             return false;
         }
@@ -91,12 +91,11 @@ public class TestFichiersLabyrinthe {
     //vérifier le contenu de fonction
     //passe les tests sans renvoyer d'erreur alors que cela devrait
     public boolean testPasDeDoublonFichier(File file) {
-        Fichier f;
-        f = new Fichier(file.toString());
+        Fichier f = new Fichier(file.getPath());
 
-        //créer d'un labyrinthe de comparaison
+        //création d'un labyrinthe de comparaison
         Labyrinthe lab = new Labyrinthe();
-        lab.creerLabyrinthe(file.toString());
+        lab.creerLabyrinthe(file.getPath());
         //initialisation de la liste de comparaison
         ArrayList<ISalle> listeV = new ArrayList<>();
         listeV.add(new Salle(-1, -1));

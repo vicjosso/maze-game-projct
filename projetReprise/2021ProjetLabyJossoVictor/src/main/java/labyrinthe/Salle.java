@@ -34,4 +34,15 @@ public class Salle implements ISalle {
         return false;
     }
     
+    @Override
+    public boolean equals(Object o){
+        if (o == this)  return true;
+        
+        if (!(o instanceof ISalle)) return false;
+        
+        ISalle other = (ISalle) o;
+        
+        return (other.getX() == this.getX() && other.getX() == this.getY());
+    }
+    
 }
