@@ -27,6 +27,7 @@ public class Vue extends AVue implements IVue{
     public void dessiner() {
      	// recopie du fond (image); murs + salles
          dessin.dessinFond();
+         dessin.dessinLab();
     }	
 
 }

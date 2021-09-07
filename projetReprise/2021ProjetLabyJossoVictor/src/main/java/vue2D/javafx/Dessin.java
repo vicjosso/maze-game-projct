@@ -21,6 +21,7 @@ public class Dessin extends Canvas {
     private int unite = 15;
     private GraphicsContext tampon;
     private Image solImage;
+    private Image saulImage;
    
     public Dessin(ILabyrinthe labyrinthe, Collection<ISprite> sprites)
     {
@@ -35,11 +36,18 @@ public class Dessin extends Canvas {
     
      public void chargementImages(){
     	solImage = new Image("file:icons/pyramide.jpg");
+        saulImage = new Image("file:icons/ground.gif");
     }
     
     public void dessinFond(){
         tampon.drawImage(solImage,0,0,unite*labyrinthe.getLargeur(),
                 unite*labyrinthe.getHauteur());
+    }
+    
+    public void dessinLab(){
+        for(ISalle lab : labyrinthe){
+            tampon.drawImage(saulImage, lab.getX() * unite, lab.getY() * unite, unite, unite);
+        }
     }
 
 }
