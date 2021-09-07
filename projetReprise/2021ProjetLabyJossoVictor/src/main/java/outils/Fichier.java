@@ -30,6 +30,7 @@ public class Fichier {
         return -1;
     }
     
+    //refaire la fonction en utilisant this plutot que faire des appels douteux
     public boolean testValid(String nomfichier){
         
         String path = "labys/" + nomfichier;
