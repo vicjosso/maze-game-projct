@@ -42,7 +42,7 @@ public class Salle implements ISalle {
         
         ISalle other = (ISalle) o;
         
-        return (other.getX() == this.getX() && other.getX() == this.getY());
+        return (other.getX() == this.getX() && other.getY() == this.getY());
     }
     
 }

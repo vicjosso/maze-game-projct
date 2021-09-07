@@ -79,12 +79,14 @@ public class TestFichiersLabyrinthe {
         lab.creerLabyrinthe(file.getPath());
         //initialisation de la liste de comparaison
         ArrayList<ISalle> listeV = new ArrayList<>();
-        listeV.add(new Salle(-1, -1));
         //boucle de vérification
+        int i = 0;
         for (ISalle labS : lab) {
+            i++;
             if (!listeV.contains(labS)) {
                 listeV.add(labS);
             } else {
+                System.out.println(i);
                 return false;
             }
         }
@@ -99,7 +101,7 @@ public class TestFichiersLabyrinthe {
         File[] fichiers = getFiles(repertoire);
 
         for (File file : fichiers) {
-            System.out.println("test du fichier " + file.getName());
+            //System.out.println("test du fichier " + file.getName());
             if(file.getName().contains("nvalid")) continue;
             assertTrue(testPasDeDoublonFichier(file));
         }
