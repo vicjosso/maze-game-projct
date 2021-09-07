@@ -101,7 +101,7 @@ public class TestFichiersLabyrinthe {
         File[] fichiers = getFiles(repertoire);
 
         for (File file : fichiers) {
-            //System.out.println("test du fichier " + file.getName());
+            System.out.println("test du fichier " + file.getName());
             if(file.getName().contains("nvalid")) continue;
             assertTrue(testPasDeDoublonFichier(file));
         }
