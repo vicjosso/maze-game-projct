@@ -4,8 +4,8 @@
 -Excercice 3: 06-09
 -Excercice 4: 06-09
 -Excercice 5: 06-09
--Excercice 6: 07-09, non fonctionnel
--Excercice 7: 07-09, non fonctionnel
+-Excercice 6: 07-09
+-Excercice 7: 07-09
 -Excercice 8: 
 -Excercice 9: 
 -Excercice 10: 
