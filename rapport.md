@@ -17,5 +17,8 @@
 
 -scéance 5 du 08-09
 	-fait:
+	ex 8
 	-difficultés:
+	implémenter Exception
 	-objectif scéance suivante:
+	finir Exception et commencer obj 3
