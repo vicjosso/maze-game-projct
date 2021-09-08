@@ -1,5 +1,6 @@
 package outils;
 
+import Exceptions.InvalidLabyFileException;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -31,7 +32,10 @@ public class Fichier {
     }
     
     //refaire la fonction en utilisant this plutot que faire des appels douteux
-    public boolean testValid(String nomfichier){
+    public static boolean testValid(String nomfichier) throws InvalidLabyFileException{
+        
+        
+        //rajouter ce truc nul throw new InvalidLabyFileException("");
         
         String path = "labys/" + nomfichier;
         
@@ -55,7 +59,6 @@ public class Fichier {
                 return false;
             }
         }
-        return true;
         
         //
         //test salles

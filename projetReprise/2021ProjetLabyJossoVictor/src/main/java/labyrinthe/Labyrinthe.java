@@ -18,22 +18,25 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     private int hauteur;
 
     @Override
-    public void creerLabyrinthe(String file) {
+    public void creerLabyrinthe(String file){
         Fichier f = new Fichier(file);
-        // dimensions
-        largeur=f.lireNombre(); 
-        hauteur=f.lireNombre(); 
+
+        if (Fichier.testValid(file)) { // dimensions   
+        }
+        largeur = f.lireNombre();
+        hauteur = f.lireNombre();
         // entree et sortie
         entree = new Salle(f.lireNombre(), f.lireNombre());
         sortie = new Salle(f.lireNombre(), f.lireNombre());
         // reste du labyrinthe
         int cpt = 0;
-        while(cpt !=-1){
+        while (cpt != -1) {
             cpt = f.lireNombre();
-            if(cpt != -1){
+            if (cpt != -1) {
                 this.add(new Salle(cpt, f.lireNombre()));
             }
         }
+
     }
 
     @Override
