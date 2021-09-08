@@ -20,10 +20,10 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
 
     @Override
     public void creerLabyrinthe(String file) throws InvalidLabyFileException{
-        Fichier f = new Fichier(file);
-        String fichierSecours = "level7.txt";
+        Fichier f = new Fichier(file); 
+        String fichierSecours = "labys/level7.txt";
 
-        if (Fichier.testValid(file)){ 
+        if (Fichier.testValid(file)){ //boucle infini
             // dimensions
             largeur = f.lireNombre();
             hauteur = f.lireNombre();
