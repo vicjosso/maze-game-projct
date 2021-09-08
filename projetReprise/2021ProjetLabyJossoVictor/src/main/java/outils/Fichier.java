@@ -34,10 +34,9 @@ public class Fichier {
     //refaire la fonction en utilisant this plutot que faire des appels douteux
     public static boolean testValid(String nomfichier) throws InvalidLabyFileException{
         
-        
-        //rajouter ce truc nul throw new InvalidLabyFileException("");
-        
         String path = "labys/" + nomfichier;
+        
+        try{
         
         //
         //test doublon
@@ -55,8 +54,7 @@ public class Fichier {
             if (!listeV.contains(labS)) {
                 listeV.add(labS);
             } else {
-                System.out.println(i);
-                return false;
+                throw new InvalidLabyFileException("Fichier invalide");
             }
         }
         
@@ -68,7 +66,7 @@ public class Fichier {
         Fichier fichier = new Fichier(path);
 
         if (!path.endsWith(".txt")) {
-            return false;
+            throw new InvalidLabyFileException("Fichier invalide");
         }
 
         //trouver un moyen de faire la différence entre retour dû à une erreur et dû à la fin du fichier
@@ -85,11 +83,16 @@ public class Fichier {
             x = cpt;
             y = fichier.lireNombre();
             if (x < 0 || y < 0 || x > l || y > h) {
-                return false;
+                throw new InvalidLabyFileException("Fichier invalide");
             }
         }
-
+        
         return true;
+        
+        } catch (InvalidLabyFileException e){
+            System.err.println(e);
+            return false;
+        }
         
     }
     

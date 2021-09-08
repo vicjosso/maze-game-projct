@@ -1,5 +1,6 @@
 package labyrinthe;
 
+import Exceptions.InvalidLabyFileException;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -18,22 +19,44 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     private int hauteur;
 
     @Override
-    public void creerLabyrinthe(String file){
+    public void creerLabyrinthe(String file) throws InvalidLabyFileException{
         Fichier f = new Fichier(file);
+        String fichierSecours = "level7.txt";
 
-        if (Fichier.testValid(file)) { // dimensions   
-        }
-        largeur = f.lireNombre();
-        hauteur = f.lireNombre();
-        // entree et sortie
-        entree = new Salle(f.lireNombre(), f.lireNombre());
-        sortie = new Salle(f.lireNombre(), f.lireNombre());
-        // reste du labyrinthe
-        int cpt = 0;
-        while (cpt != -1) {
-            cpt = f.lireNombre();
-            if (cpt != -1) {
-                this.add(new Salle(cpt, f.lireNombre()));
+        if (Fichier.testValid(file)){ 
+            // dimensions
+            largeur = f.lireNombre();
+            hauteur = f.lireNombre();
+            // entree et sortie
+            entree = new Salle(f.lireNombre(), f.lireNombre());
+            sortie = new Salle(f.lireNombre(), f.lireNombre());
+            // reste du labyrinthe
+            int cpt = 0;
+            while (cpt != -1) {
+                cpt = f.lireNombre();
+                if (cpt != -1) {
+                    this.add(new Salle(cpt, f.lireNombre()));
+                }
+            }
+        } else{
+            if(Fichier.testValid(fichierSecours)){
+                f = new Fichier(fichierSecours);
+                // dimensions
+                largeur = f.lireNombre();
+                hauteur = f.lireNombre();
+                // entree et sortie
+                entree = new Salle(f.lireNombre(), f.lireNombre());
+                sortie = new Salle(f.lireNombre(), f.lireNombre());
+                // reste du labyrinthe
+                int cpt = 0;
+                while (cpt != -1) {
+                cpt = f.lireNombre();
+                if (cpt != -1) {
+                    this.add(new Salle(cpt, f.lireNombre()));
+                }
+            }
+            } else {
+                //fermer le programme et sortir une erreur 
             }
         }
 
