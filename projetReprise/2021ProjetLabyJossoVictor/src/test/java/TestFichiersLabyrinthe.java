@@ -1,4 +1,5 @@
 
+import Exceptions.InvalidLabyFileException;
 import static org.junit.Assert.*;
 import java.io.File;
 import java.util.ArrayList;
@@ -71,7 +72,7 @@ public class TestFichiersLabyrinthe {
 
     //vérifier le contenu de fonction
     //passe les tests sans renvoyer d'erreur alors que cela devrait
-    public boolean testPasDeDoublonFichier(File file) {
+    public boolean testPasDeDoublonFichier(File file) throws InvalidLabyFileException{
         Fichier f = new Fichier(file.getPath());
 
         //création d'un labyrinthe de comparaison
@@ -96,7 +97,7 @@ public class TestFichiersLabyrinthe {
     
     //bloque au fichier invalide2 et 7
     @Test
-    public void testPasDeDoublon() {
+    public void testPasDeDoublon() throws InvalidLabyFileException{
         File repertoire = new File("labys/");
         File[] fichiers = getFiles(repertoire);
 

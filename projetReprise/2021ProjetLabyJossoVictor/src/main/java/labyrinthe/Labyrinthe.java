@@ -23,7 +23,7 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         Fichier f = new Fichier(file); 
         String fichierSecours = "labys/level7.txt";
 
-        if (Fichier.testValid(file)){ //boucle infini
+        if (Fichier.testValid(file)){ //boucle infini dans le testValid
             // dimensions
             largeur = f.lireNombre();
             hauteur = f.lireNombre();

@@ -34,17 +34,15 @@ public class Fichier {
     //refaire la fonction en utilisant this plutot que faire des appels douteux
     public static boolean testValid(String nomfichier) throws InvalidLabyFileException{
         
-        String path = "labys/" + nomfichier;
-        
+        System.out.println("entrée dans le try catch testValid");
         try{
-        
         //
         //test doublon
         //
 
         //création d'un labyrinthe de comparaison
         Labyrinthe lab = new Labyrinthe();
-        lab.creerLabyrinthe(path);
+        lab.creerLabyrinthe(nomfichier);
         //initialisation de la liste de comparaison
         ArrayList<ISalle> listeV = new ArrayList<>();
         //boucle de vérification
@@ -57,15 +55,18 @@ public class Fichier {
                 throw new InvalidLabyFileException("Fichier invalide");
             }
         }
+        System.out.println("test doublon ok");
+        
         
         //
         //test salles
         //
         
         //erreur de type mystère
-        Fichier fichier = new Fichier(path);
+        Fichier fichier = new Fichier(nomfichier);
 
-        if (!path.endsWith(".txt")) {
+        if (!nomfichier.endsWith(".txt")) {
+            System.out.println("erreur extension");
             throw new InvalidLabyFileException("Fichier invalide");
         }
 
