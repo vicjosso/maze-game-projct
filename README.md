@@ -8,7 +8,12 @@
 -Excercice 7: 07-09
 -Excercice 8: 08-09
 -Excercice 9: 09-09
--Excercice 10: 
--Excercice 11: 
--Excercice 12: 
+-Excercice 10: 09-09
+-Excercice 11: 09-09
+-Excercice 12: 09-09
+-Excercice 13: 09-09
+-Excercice 14:
+-Excercice 15:
+-Excercice 16:
+
 

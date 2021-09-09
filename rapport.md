@@ -25,6 +25,8 @@
 
 -scéance 6 du 09-09
 	-fait:
-	ex 9-10-11
+	ex 9-10-11-12-13
 	-difficultés:
+	incompréhension au niveau du nombre d'interface et de classe abstraite
 	-objectif scéance suivante:
+	vérifié que tous les exos sont bien fait, avancer et finir obj 4
