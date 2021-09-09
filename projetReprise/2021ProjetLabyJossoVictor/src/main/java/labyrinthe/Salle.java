@@ -31,7 +31,10 @@ public class Salle implements ISalle {
     
     @Override
     public boolean estAdjacente(ISalle autre){
-        return false;
+        //méthode à vérifier
+        boolean vertical = this.y+1 == autre.getY() || this.y-1 == autre.getY();
+        boolean horizontal = this.x+1 == autre.getX() || this.x-1 == autre.getX();
+        return vertical && horizontal;
     }
     
     @Override

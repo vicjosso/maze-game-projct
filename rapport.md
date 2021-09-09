@@ -22,3 +22,9 @@
 	implémenter Exception
 	-objectif scéance suivante:
 	finir Exception et commencer obj 3
+
+-scéance 6 du 09-09
+	-fait:
+	ex 9-10-11
+	-difficultés:
+	-objectif scéance suivante:

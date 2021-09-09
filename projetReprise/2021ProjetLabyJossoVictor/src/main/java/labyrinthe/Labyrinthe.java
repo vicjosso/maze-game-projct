@@ -60,7 +60,6 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
                 System.exit(0);
             }
         }
-
     }
 
     @Override
