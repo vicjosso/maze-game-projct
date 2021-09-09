@@ -23,7 +23,7 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         Fichier f = new Fichier(file); 
         String fichierSecours = "labys/level7.txt";
 
-        if (Fichier.testValid(file)){ //boucle infini dans le testValid
+        if (Fichier.testValid(file)){
             // dimensions
             largeur = f.lireNombre();
             hauteur = f.lireNombre();
@@ -56,7 +56,8 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
                 }
             }
             } else {
-                //fermer le programme et sortir une erreur 
+                System.out.println("Fichier illisible");
+                System.exit(0);
             }
         }
 
