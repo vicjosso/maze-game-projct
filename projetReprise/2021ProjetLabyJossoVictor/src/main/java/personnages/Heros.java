@@ -15,6 +15,6 @@ public class Heros extends APersonnage{
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles){
         
-        return null;
+        return this.salleChoisie;
     }
 }
