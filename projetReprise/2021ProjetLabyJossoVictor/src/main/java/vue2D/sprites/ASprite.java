@@ -11,13 +11,14 @@ import personnages.IPersonnage;
  */
 public abstract class ASprite implements ISprite{
     
-    //private IPersonnage entite;
+    protected IPersonnage entite;
     private int unite = 15;
     private Image img;
     private int coordX;
     private int coordY;
     
-    public ASprite(Image img){
+    public ASprite(IPersonnage perso, Image img){
+        this.entite = perso;
         this.img = img;
     }
     

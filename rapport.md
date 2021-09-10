@@ -33,5 +33,8 @@
 
 scéance 7 du 10-09
 	-fait:
+	presque tout exo 14, début exo 15
 	-difficultés:
+	faire l'excercice 14, effectué les consignes demandé, plus exactement, implémenté la salleChoisie
 	-objectif scéance suivante:
+	finir objectif 4, et commencer/finir objectif 5

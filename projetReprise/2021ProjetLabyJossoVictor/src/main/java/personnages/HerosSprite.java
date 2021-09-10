@@ -20,10 +20,12 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent>{
     private static Image image = new Image("file:icons/link/LinkRunShieldL1.gif");
     
     public HerosSprite(){
-        super(image);
+        //voir comment rajouter un perso dans le constructeur
+        super(entite, image);
     }
     
     public void handle(KeyEvent event){
+        //mettre à jour la salleChoisie
         switch(event.getCode()){
             case UP:
                 

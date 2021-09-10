@@ -9,7 +9,6 @@ import labyrinthe.ISalle;
  */
 public class Heros extends APersonnage{
     
-    //pas fini
     public ISalle salleChoisie;
     
     @Override
