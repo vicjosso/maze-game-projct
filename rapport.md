@@ -30,3 +30,8 @@
 	incompréhension au niveau du nombre d'interface et de classe abstraite
 	-objectif scéance suivante:
 	vérifié que tous les exos sont bien fait, avancer et finir obj 4
+
+scéance 7 du 10-09
+	-fait:
+	-difficultés:
+	-objectif scéance suivante:

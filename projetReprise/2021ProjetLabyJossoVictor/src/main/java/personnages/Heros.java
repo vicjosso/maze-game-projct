@@ -10,11 +10,15 @@ import labyrinthe.ISalle;
 public class Heros extends APersonnage{
     
     //pas fini
-    ISalle salleChoisie;
+    public ISalle salleChoisie;
     
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles){
+        if(sallesAccessibles.contains(salleChoisie)){
+            return this.salleChoisie;
+        } else {
+            return position;
+        }
         
-        return this.salleChoisie;
     }
 }
