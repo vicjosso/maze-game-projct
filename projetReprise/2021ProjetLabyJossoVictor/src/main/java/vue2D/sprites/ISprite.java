@@ -9,5 +9,4 @@ import personnages.IPersonnage;
 */
 public interface ISprite extends IPersonnage{
 	public void dessiner(GraphicsContext g);
-	public void setCoordonnees(int xpix, int ypix);
 }
