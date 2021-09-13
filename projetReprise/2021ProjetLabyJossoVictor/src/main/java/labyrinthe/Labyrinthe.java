@@ -73,6 +73,8 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         System.out.println("Bob en X " + bobX);
         System.out.println("Bob en Y " + bobY);
         
+        
+        //ne cherche que dans la moitié du labyrinthe
         for(ISalle salle : this){
             if(bobX -1 == salle.getX() && bobY == salle.getY()
                     || bobX +1 == salle.getX() && bobY == salle.getY()
@@ -82,6 +84,7 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
             }
             
             if(salle.getX() == 25 && salle.getY() == 8) System.out.println("salle trouvé");
+            System.out.println("coord X " + salle.getX() + " coord Y " + salle.getY());
             
         }
         
