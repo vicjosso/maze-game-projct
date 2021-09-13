@@ -8,6 +8,7 @@ import labyrinthe.Labyrinthe;
 import labyrinthe.Salle;
 import org.junit.Test;
 import outils.Fichier;
+import personnages.IPersonnage;
 
 /**
  *
@@ -115,9 +116,16 @@ public class TestFichiersLabyrinthe {
         fail("not implemented");
     }
     
+    //test a finir
     @Test
-    public void SallesAdjacente(){
-        //patate
+    public void SallesAdjacente() throws InvalidLabyFileException{
+        Labyrinthe lab = new Labyrinthe();
+        lab.creerLabyrinthe("eeee"); //mode secours
+        
+        IPersonnage perso;
+        
+        //lab.sallesAccessibles(perso);
+        
     }
 
 }

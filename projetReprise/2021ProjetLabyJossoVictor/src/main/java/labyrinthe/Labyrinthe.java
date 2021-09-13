@@ -67,13 +67,21 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         
         Collection<ISalle> sallesAccessibles = null;
         
+        int bobX = bob.getPosition().getX();
+        int bobY = bob.getPosition().getY();
+        
+        System.out.println("Bob en X " + bobX);
+        System.out.println("Bob en Y " + bobY);
+        
         for(ISalle salle : this){
-            if(bob.getPosition().getX()-1 == salle.getX() && bob.getPosition().getY() == salle.getY()
-                    || bob.getPosition().getX()+1 == salle.getX() && bob.getPosition().getY() == salle.getY()
-                    || bob.getPosition().getX() == salle.getX() && bob.getPosition().getY()-1 == salle.getY()
-                    || bob.getPosition().getX() == salle.getX() && bob.getPosition().getY()+1 == salle.getY()){
+            if(bobX -1 == salle.getX() && bobY == salle.getY()
+                    || bobX +1 == salle.getX() && bobY == salle.getY()
+                    || bobX == salle.getX() && bobY - 1 == salle.getY()
+                    || bobX == salle.getX() && bobY + 1 == salle.getY()){
                     sallesAccessibles.add(salle);
             }
+            
+            if(salle.getX() == 25 && salle.getY() == 8) System.out.println("salle trouvé");
             
         }
         
