@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Collection;
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
+import personnages.HerosSprite;
 import personnages.IPersonnage;
 import vue2D.IVue;
 import vue2D.sprites.ISprite;
@@ -22,11 +23,10 @@ public class Core {
         chargementLaby("labys/level3.txt");
     }
 
-    protected void initSprites(IVue vue) {
-        // creation du heros 
-        //IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
-        //this.heros = new HerosSprite(h, labyrinthe);
-        //vue.add(this.heros);
+    protected void initSprites(IVue vue) { 
+        IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
+        this.heros = new HerosSprite(h); //paramètre labyrinthe retiré
+        vue.add(this.heros);
     }
 
     protected void jeu(IVue vue) {
