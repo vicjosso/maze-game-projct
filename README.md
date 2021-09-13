@@ -12,7 +12,7 @@
 -Excercice 11: 09-09
 -Excercice 12: 09-09
 -Excercice 13: 09-09
--Excercice 14: en cours
+-Excercice 14: 13-09
 -Excercice 15: en cours
 -Excercice 16:
 

@@ -42,4 +42,4 @@ scéance 7 du 10-09
 scéance 8 et 9 du 13-09	
 	-fait:
 	-difficultés:
-	-objectif scéance suivante
+	-objectif scéance suivante:
