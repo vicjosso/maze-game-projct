@@ -8,7 +8,7 @@ import labyrinthe.ISalle;
  */
 public abstract class APersonnage implements IPersonnage{
     
-    public ISalle position;
+    protected ISalle position;
     
     @Override
     public ISalle getPosition(){

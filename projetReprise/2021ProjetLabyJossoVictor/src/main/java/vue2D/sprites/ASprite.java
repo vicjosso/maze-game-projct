@@ -25,7 +25,7 @@ public abstract class ASprite implements ISprite{
     public void dessiner(GraphicsContext g){
         //vérifier l'utilisation de unite, parce que coord peut être en pixel et non coord
         //g.drawImage(this.img, this.coordX * unite, this.coordY * unite, unite, unite);
-        g.drawImage(this.img, this.entite.getPosition().getX(), this.entite.getPosition().getY(), unite, unite);
+        g.drawImage(this.img, this.entite.getPosition().getX() * unite, this.entite.getPosition().getY() * unite, unite, unite);
     }
     
     @Override

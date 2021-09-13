@@ -28,7 +28,6 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent>{
     public void handle(KeyEvent event){
         //code de type mytérieux test, pas sûr du fonctionnement
         Heros heros = (Heros) entite;
-        
         switch(event.getCode()){
             case UP:
                 heros.salleChoisie = new Salle(this.entite.getPosition().getX(), this.entite.getPosition().getY()-1);

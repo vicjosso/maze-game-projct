@@ -12,6 +12,7 @@ public class Heros extends APersonnage{
     public ISalle salleChoisie;
     
     public Heros(ISalle entree){
+        this.position = entree;
         this.salleChoisie = entree;
     }
     
