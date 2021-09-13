@@ -41,5 +41,8 @@ scéance 7 du 10-09
 
 scéance 8 et 9 du 13-09	
 	-fait:
+	exo 14, 15
 	-difficultés:
+	pb sur la recherche de salle accessible, n'itère que dans la moitié du lab
 	-objectif scéance suivante:
+	enfin finir l'obj 3 et commencer obj 4
