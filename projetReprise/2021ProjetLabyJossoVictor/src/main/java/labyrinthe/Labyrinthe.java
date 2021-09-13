@@ -64,11 +64,17 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
 
     @Override
     public Collection<ISalle> sallesAccessibles(IPersonnage bob) {
-        //methode à faire
-        Collection<ISalle> sallesAccessibles;
         
-        for(){
-            sallesAccessibles.add();
+        Collection<ISalle> sallesAccessibles = null;
+        
+        for(ISalle salle : this){
+            if(bob.getPosition().getX()-1 == salle.getX() && bob.getPosition().getY() == salle.getY()
+                    || bob.getPosition().getX()+1 == salle.getX() && bob.getPosition().getY() == salle.getY()
+                    || bob.getPosition().getX() == salle.getX() && bob.getPosition().getY()-1 == salle.getY()
+                    || bob.getPosition().getX() == salle.getX() && bob.getPosition().getY()+1 == salle.getY()){
+                    sallesAccessibles.add(salle);
+            }
+            
         }
         
         return sallesAccessibles;
