@@ -38,3 +38,8 @@ scéance 7 du 10-09
 	faire l'excercice 14, effectué les consignes demandé, plus exactement, implémenté la salleChoisie
 	-objectif scéance suivante:
 	finir objectif 4, et commencer/finir objectif 5
+
+scéance 8 et 9 du 13-09	
+	-fait:
+	-difficultés:
+	-objectif scéance suivante

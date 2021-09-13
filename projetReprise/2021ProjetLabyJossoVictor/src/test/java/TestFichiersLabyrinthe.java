@@ -114,5 +114,10 @@ public class TestFichiersLabyrinthe {
         File[] fichiers = getFiles(repertoire);
         fail("not implemented");
     }
+    
+    @Test
+    public void SallesAdjacente(){
+        //patate
+    }
 
 }
