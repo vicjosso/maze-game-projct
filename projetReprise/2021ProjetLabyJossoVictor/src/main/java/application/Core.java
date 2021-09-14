@@ -6,6 +6,7 @@ import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
 import personnages.HerosSprite;
 import personnages.IPersonnage;
+import personnages.MonstreSprite;
 import vue2D.IVue;
 import vue2D.sprites.ISprite;
 
@@ -16,6 +17,7 @@ import vue2D.sprites.ISprite;
 public class Core {
     ISprite heros;
     ILabyrinthe labyrinthe;
+    private int nbMonstre = 10;
 
     protected void initLabyrinthe() {
         // creation du labyrinthe
@@ -27,6 +29,7 @@ public class Core {
         IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
         this.heros = new HerosSprite(h); //paramètre labyrinthe retiré
         vue.add(this.heros);
+        for(int i = 0; i < nbMonstre; i++) vue.add(new MonstreSprite(new personnages.Monstre(labyrinthe.getSortie()))); //spawn des monstres
     }
 
     protected void jeu(IVue vue) {

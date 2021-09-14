@@ -14,6 +14,10 @@
 -Excercice 13: 09-09
 -Excercice 14: 13-09
 -Excercice 15: 14-09
--Excercice 16:
+-Excercice 16: 14-09
+-Excercice 17: 14-09
+-Excercice 18: 14-09
+-Excercice 19:
+-Excercice 20:
 
 

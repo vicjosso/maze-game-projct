@@ -49,6 +49,8 @@ scéance 8 et 9 du 13-09
 
 scéance 10 et 11 du 14-09
 	-fait:
-	pb d'itération régler, et optimisation
+	pb d'itération régler, et optimisation, obj3, obj4
 	-difficultés:
+	régler les pbs rencontrés lors de l'utilisation de sallesAccessibles
 	-objectif scéance suivante:
+	ralentir la vitesse de déplacement des monstres, fluidifié le déplacement des perso et rajouter 	orientation personnage en fonction de la dernière direction choisie

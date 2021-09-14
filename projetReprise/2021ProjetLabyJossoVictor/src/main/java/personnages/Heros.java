@@ -23,6 +23,5 @@ public class Heros extends APersonnage{
         } else {
             return position;
         }
-        
     }
 }

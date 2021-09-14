@@ -1,10 +1,8 @@
 package personnages;
 
-import java.util.Collection;
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
-import labyrinthe.ISalle;
 import labyrinthe.Salle;
 import vue2D.sprites.ASprite;
 
@@ -26,7 +24,6 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent>{
     
     @Override
     public void handle(KeyEvent event){
-        //code de type mytérieux test, pas sûr du fonctionnement
         Heros heros = (Heros) entite;
         switch(event.getCode()){
             case UP:
