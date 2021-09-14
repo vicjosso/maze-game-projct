@@ -49,5 +49,6 @@ scéance 8 et 9 du 13-09
 
 scéance 10 et 11 du 14-09
 	-fait:
+	pb d'itération régler, et optimisation
 	-difficultés:
 	-objectif scéance suivante:

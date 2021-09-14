@@ -3,6 +3,7 @@ package labyrinthe;
 import Exceptions.InvalidLabyFileException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import outils.Fichier;
 import personnages.IPersonnage;
@@ -65,16 +66,13 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     @Override
     public Collection<ISalle> sallesAccessibles(IPersonnage bob) {
         
-        Collection<ISalle> sallesAccessibles = null;
+        Collection<ISalle> sallesAccessibles = new ArrayList<>();
         
         for(ISalle salle : this){
             if(bob.getPosition().estAdjacente(salle)){
-                    System.out.println("salle enregistré " + salle.getX() + " " + salle.getY());
                     sallesAccessibles.add(salle);
             }
         }
-        
-        System.out.println(sallesAccessibles.size());
         
         return sallesAccessibles;
     }
