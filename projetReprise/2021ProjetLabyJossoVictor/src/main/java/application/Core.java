@@ -17,7 +17,7 @@ import vue2D.sprites.ISprite;
 public class Core {
     ISprite heros;
     ILabyrinthe labyrinthe;
-    private int nbMonstre = 10;
+    private int nbMonstre = 100000;
 
     protected void initLabyrinthe() {
         // creation du labyrinthe
