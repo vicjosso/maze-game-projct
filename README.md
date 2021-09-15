@@ -17,7 +17,7 @@
 -Excercice 16: 14-09
 -Excercice 17: 14-09
 -Excercice 18: 14-09
--Excercice 19:
+-Excercice 19: 15-09
 -Excercice 20:
 
 

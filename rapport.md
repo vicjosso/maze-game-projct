@@ -57,5 +57,8 @@ scéance 10 et 11 du 14-09
 
 scéance 12 du 15-09
 	-fait:
+	ex 19, fluidité sprites
 	-difficultés:
+	trouver la façon de fluidifié les mvts
 	-objectif scéance suivante:
+	éclairage et murs
