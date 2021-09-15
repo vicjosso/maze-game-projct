@@ -10,24 +10,32 @@ import personnages.IPersonnage;
  *
  * @author vjosso
  */
-public abstract class ASprite implements ISprite{
-    
+public abstract class ASprite implements ISprite {
+
     protected IPersonnage entite;
-    private final int unite = 15;
     protected Image img;
-    
-    public ASprite(IPersonnage perso, Image img){
+    private ISalle oldPos;
+    private final int unite = 15;
+    private final float lerpSpeed = 0.7f;
+
+    public ASprite(IPersonnage perso, Image img) {
         this.entite = perso;
         this.img = img;
+        this.oldPos = this.entite.getPosition();
     }
-    
+
     @Override
-    public void dessiner(GraphicsContext g){
-        //vérifier l'utilisation de unite, parce que coord peut être en pixel et non coord
-        //g.drawImage(this.img, this.coordX * unite, this.coordY * unite, unite, unite);
-        g.drawImage(this.img, this.entite.getPosition().getX() * unite, this.entite.getPosition().getY() * unite, unite, unite);
+    public void dessiner(GraphicsContext g) {
+        //g.drawImage(this.img, this.entite.getPosition().getX() * unite, this.entite.getPosition().getY() * unite, unite, unite);
+        
+        g.drawImage(this.img, 
+                lerp(this.oldPos.getX(), this.entite.getPosition().getX()) * unite, 
+                lerp(this.oldPos.getY(), this.entite.getPosition().getY()) * unite,
+                unite,
+                unite);
+        
     }
-    
+
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
         return entite.faitSonChoix(sallesAccessibles);
@@ -40,6 +48,11 @@ public abstract class ASprite implements ISprite{
 
     @Override
     public void setPosition(ISalle s) {
+        this.oldPos = this.entite.getPosition();
         this.entite.setPosition(s);
+    }
+
+    float lerp(float a, float b) {
+        return a + lerpSpeed * (b - a);
     }
 }

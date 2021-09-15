@@ -13,7 +13,6 @@ import vue2D.sprites.ASprite;
 public class HerosSprite extends ASprite implements EventHandler<KeyEvent>{
     
     private final static Image imgL = new Image("file:icons/link/LinkRunShieldL1.gif");
-    //pb ici
     private final static Image imgU = new Image("file:icons/link/LinkRunU1.gif");
     private final static Image imgR = new Image("file:icons/link/LinkRunR1.gif");
     private final static Image imgD = new Image("file:icons/link/LinkRunShieldD1.gif");

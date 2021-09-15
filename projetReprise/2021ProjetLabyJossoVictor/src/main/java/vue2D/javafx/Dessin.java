@@ -50,8 +50,8 @@ public class Dessin extends Canvas {
         for(ISalle lab : labyrinthe){
             tampon.drawImage(saulImage, lab.getX() * unite, lab.getY() * unite, unite, unite);
         }
-        // useless pour le moment
-        //tampon.drawImage(sortieImg, sortie.getX() * unite, sortie.getY() * unite, unite, unite);
+        tampon.drawImage(sortieImg, labyrinthe.getEntree().getX() * unite, labyrinthe.getEntree().getY() * unite, unite, unite);
+        tampon.drawImage(sortieImg, labyrinthe.getSortie().getX() * unite, labyrinthe.getSortie().getY() * unite, unite, unite);
     }
 
 }

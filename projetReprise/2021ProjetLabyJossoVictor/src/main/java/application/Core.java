@@ -34,10 +34,8 @@ public class Core {
 
     protected void jeu(IVue vue) {
         // boucle principale
-        int frames = 0;
         ISalle destination = null;
         while (!labyrinthe.getSortie().equals(heros.getPosition())) {
-            frames++;
             // choix et deplacement
             for (IPersonnage p : vue) {
                 Collection<ISalle> sallesAccessibles = labyrinthe.sallesAccessibles(p);
