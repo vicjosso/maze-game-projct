@@ -54,3 +54,8 @@ scéance 10 et 11 du 14-09
 	régler les pbs rencontrés lors de l'utilisation de sallesAccessibles
 	-objectif scéance suivante:
 	ralentir la vitesse de déplacement des monstres, fluidifié le déplacement des perso et rajouter 	orientation personnage en fonction de la dernière direction choisie
+
+scéance 12 du 15-09
+	-fait:
+	-difficultés:
+	-objectif scéance suivante:

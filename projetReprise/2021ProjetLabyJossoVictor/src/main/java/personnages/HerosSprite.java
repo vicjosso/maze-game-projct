@@ -16,10 +16,13 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent>{
     // implémentation de toutes les méthodes encore nécessaire
     //
     
-    private static Image image = new Image("file:icons/link/LinkRunShieldL1.gif");
+    private static Image imgL = new Image("file:icons/link/LinkRunShieldL1.gif");
+    private static Image imgU = new Image("ile:icons/link/LinkRunU1.gif");
+    private static Image imgR = new Image("ile:icons/link/LinkRunR1.gif");
+    private static Image imgD = new Image("file:icons/link/LinkRunShieldD1.gif");
     
     public HerosSprite(IPersonnage perso){
-        super(perso, image);
+        super(perso, imgD);
     }
     
     @Override
@@ -27,15 +30,19 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent>{
         Heros heros = (Heros) entite;
         switch(event.getCode()){
             case UP:
+                this.img = imgU;
                 heros.salleChoisie = new Salle(this.entite.getPosition().getX(), this.entite.getPosition().getY()-1);
                 break;
             case RIGHT:
+                this.img = imgR;
                 heros.salleChoisie = new Salle(this.entite.getPosition().getX()+1, this.entite.getPosition().getY());
                 break;
             case DOWN:
+                this.img = imgD;
                 heros.salleChoisie = new Salle(this.entite.getPosition().getX(), this.entite.getPosition().getY()+1);
                 break;
             case LEFT:
+                this.img = imgL;
                 heros.salleChoisie = new Salle(this.entite.getPosition().getX()-1, this.entite.getPosition().getY());
                 break;
             default:

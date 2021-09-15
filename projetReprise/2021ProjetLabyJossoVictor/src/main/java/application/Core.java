@@ -17,7 +17,7 @@ import vue2D.sprites.ISprite;
 public class Core {
     ISprite heros;
     ILabyrinthe labyrinthe;
-    private int nbMonstre = 100000;
+    private int nbMonstre = 10;
 
     protected void initLabyrinthe() {
         // creation du labyrinthe
@@ -34,10 +34,13 @@ public class Core {
 
     protected void jeu(IVue vue) {
         // boucle principale
+        int frames = 0;
         ISalle destination = null;
         while (!labyrinthe.getSortie().equals(heros.getPosition())) {
+            frames++;
             // choix et deplacement
             for (IPersonnage p : vue) {
+                
                 Collection<ISalle> sallesAccessibles = labyrinthe.sallesAccessibles(p);
                 destination = p.faitSonChoix(sallesAccessibles); // on demande au personnage de faire son choix de salle
                 p.setPosition(destination); // deplacement
@@ -47,7 +50,7 @@ public class Core {
             ISprite monstre = null;
             for (ISprite p : vue) {
                 if (p != heros) {
-                    if (p.getPosition() == heros.getPosition()) {
+                    if (p.getPosition().equals(heros.getPosition())) {
                         System.out.println("Collision !!");
                         collision = true;
                         monstre = p;
@@ -59,6 +62,9 @@ public class Core {
                 vue.remove(heros);
                 System.out.println("Perdu !");
                 System.out.println("Plus que " + vue.size() + " personnages ...");
+                //respawn du héros
+                heros.setPosition(labyrinthe.getEntree());
+                vue.add(heros);
             }
 
             temporisation(50);

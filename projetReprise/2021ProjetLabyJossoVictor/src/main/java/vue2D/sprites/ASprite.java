@@ -14,7 +14,7 @@ public abstract class ASprite implements ISprite{
     
     protected IPersonnage entite;
     private final int unite = 15;
-    private Image img;
+    protected Image img;
     
     public ASprite(IPersonnage perso, Image img){
         this.entite = perso;

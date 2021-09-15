@@ -11,7 +11,8 @@ import labyrinthe.Salle;
 public class Monstre extends APersonnage{
 
     public ISalle salleChoisie;
-    public int cooldown;
+    private int cooldown = 5;
+    private int frames = 0;
     
     public Monstre(ISalle spawn){
         this.position = spawn;
@@ -20,9 +21,15 @@ public class Monstre extends APersonnage{
     
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles){
+        frames++;
         deplacementMonstre();
-        if(sallesAccessibles.contains(salleChoisie)){
-            return this.salleChoisie;
+        if(frames == cooldown){
+            if(sallesAccessibles.contains(salleChoisie)){
+                this.frames = 0;
+                return this.salleChoisie;
+            }
+            this.frames = 0;
+            return position;
         } else {
             return position;
         }
