@@ -40,7 +40,6 @@ public class Core {
             frames++;
             // choix et deplacement
             for (IPersonnage p : vue) {
-                
                 Collection<ISalle> sallesAccessibles = labyrinthe.sallesAccessibles(p);
                 destination = p.faitSonChoix(sallesAccessibles); // on demande au personnage de faire son choix de salle
                 p.setPosition(destination); // deplacement

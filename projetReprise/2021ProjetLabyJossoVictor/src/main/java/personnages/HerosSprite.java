@@ -11,16 +11,13 @@ import vue2D.sprites.ASprite;
  * @author vjosso
  */
 public class HerosSprite extends ASprite implements EventHandler<KeyEvent>{
+    
+    private final static Image imgL = new Image("file:icons/link/LinkRunShieldL1.gif");
+    //pb ici
+    private final static Image imgU = new Image("file:icons/link/LinkRunU1.gif");
+    private final static Image imgR = new Image("file:icons/link/LinkRunR1.gif");
+    private final static Image imgD = new Image("file:icons/link/LinkRunShieldD1.gif");
 
-    //
-    // implémentation de toutes les méthodes encore nécessaire
-    //
-    
-    private static Image imgL = new Image("file:icons/link/LinkRunShieldL1.gif");
-    private static Image imgU = new Image("ile:icons/link/LinkRunU1.gif");
-    private static Image imgR = new Image("ile:icons/link/LinkRunR1.gif");
-    private static Image imgD = new Image("file:icons/link/LinkRunShieldD1.gif");
-    
     public HerosSprite(IPersonnage perso){
         super(perso, imgD);
     }
