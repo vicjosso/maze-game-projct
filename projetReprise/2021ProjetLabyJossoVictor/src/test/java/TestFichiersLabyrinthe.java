@@ -11,11 +11,18 @@ import outils.Fichier;
 import personnages.IPersonnage;
 
 /**
- *
+ * Classe de gestion des tests
+ * 
  * @author INFO Professors team
  */
 public class TestFichiersLabyrinthe {
 
+    /**
+     * Méthode permettant d'obtenir un fichier en fonction de son emplacement 
+     * 
+     * @param repertoire, emplacement du fichier
+     * @return le fichier
+     */
     private File[] getFiles(File repertoire) {
         if (!repertoire.isDirectory()) {
             fail("testCoordonneesSalles - les tests ne concernent pas un répertoire");
@@ -24,9 +31,12 @@ public class TestFichiersLabyrinthe {
         return fichiers;
     }
 
-    //vérification de la bonne extension de fichier
-    //vérification de la présence ou non de caractère autre que des chiffres
-    //vérification de nombre négatif
+    /**
+     * Méthode de vérification des coordonnées présent dans un fichier
+     * 
+     * @param f, fichier
+     * @return vrai si les coordonnées sont bonnes
+     */
     public boolean testCoordonneesSallesFichier(File f) {
 
         String nomFichier = f.getPath();
@@ -36,7 +46,6 @@ public class TestFichiersLabyrinthe {
             return false;
         }
 
-        //trouver un moyen de faire la différence entre retour dû à une erreur et dû à la fin du fichier
         int l = fichier.lireNombre();
         int h = fichier.lireNombre();
         int x;
@@ -57,6 +66,9 @@ public class TestFichiersLabyrinthe {
         return true;
     }
 
+    /**
+     * Test les coordonnées des salles d'un fichier 
+     */
     @Test
     public void testCoordonneesSalles() {
         File repertoire = new File("labys/");
@@ -71,8 +83,13 @@ public class TestFichiersLabyrinthe {
         }
     }
 
-    //vérifier le contenu de fonction
-    //passe les tests sans renvoyer d'erreur alors que cela devrait
+    /**
+     * Vérifie que aucune salle soit en doublon dans un fichier 
+     * 
+     * @param file, fichier
+     * @return vrai si aucune salle ne contient de doublon
+     * @throws InvalidLabyFileException 
+     */
     public boolean testPasDeDoublonFichier(File file) throws InvalidLabyFileException{
         Fichier f = new Fichier(file.getPath());
 
@@ -94,9 +111,12 @@ public class TestFichiersLabyrinthe {
         }
         return true;
     }
-
     
-    //bloque au fichier invalide2 et 7
+    /**
+     * Vérifie qu'il n'y ait pas de doublon de salle dans un fichier
+     * 
+     * @throws InvalidLabyFileException 
+     */
     @Test
     public void testPasDeDoublon() throws InvalidLabyFileException{
         File repertoire = new File("labys/");
@@ -109,6 +129,9 @@ public class TestFichiersLabyrinthe {
         }
     }
 
+    /**
+     * Méthode non implémenté
+     */
     @Test
     public void testChemin() {
         File repertoire = new File("labys/");

@@ -7,20 +7,34 @@ import labyrinthe.Salle;
 import vue2D.sprites.ASprite;
 
 /**
- *
+ * Classe de gestion du Sprite du Heros
+ * 
  * @author vjosso
  */
 public class HerosSprite extends ASprite implements EventHandler<KeyEvent>{
     
+    /**
+     * Initialisation des images du héros
+     */
     private final static Image imgL = new Image("file:icons/link/LinkRunShieldL1.gif");
     private final static Image imgU = new Image("file:icons/link/LinkRunU1.gif");
     private final static Image imgR = new Image("file:icons/link/LinkRunR1.gif");
     private final static Image imgD = new Image("file:icons/link/LinkRunShieldD1.gif");
 
+    /**
+     * Constructeur de HerosSprite
+     * 
+     * @param perso, personnage du héros
+     */
     public HerosSprite(IPersonnage perso){
         super(perso, imgD);
     }
     
+    /**
+     * Méthode de gestion du déplacement du personnage
+     * 
+     * @param event 
+     */
     @Override
     public void handle(KeyEvent event){
         Heros heros = (Heros) entite;

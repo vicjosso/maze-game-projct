@@ -10,7 +10,8 @@ import static vue2D.javafx.Dessin.tampon;
 import vue2D.sprites.ISprite;
 
 /**
- *
+ * Classe de gestion de la Vue
+ * 
  * @author INFO Professors team
  */
 public class Vue extends AVue implements IVue {
@@ -19,6 +20,11 @@ public class Vue extends AVue implements IVue {
     ILabyrinthe labyrinthe;
     public Scene scene;
 
+    /**
+     * Constructeur de Vue
+     * 
+     * @param labyrinthe, labyrinthe sur lequel on joue 
+     */
     public Vue(ILabyrinthe labyrinthe) {
         this.labyrinthe = labyrinthe;
         dessin = new Dessin(labyrinthe, this);
@@ -27,6 +33,9 @@ public class Vue extends AVue implements IVue {
         root.getChildren().add(dessin);
     }
 
+    /**
+     * Méthode de dessin du labyrinthe
+     */
     @Override
     public void dessiner() {
         // recopie du fond (image); murs + salles
@@ -38,6 +47,12 @@ public class Vue extends AVue implements IVue {
         }
     }
 
+    /**
+     * Redéfinition de la méthode add
+     * 
+     * @param sprite, entité à vérifié
+     * @return vrai si sprite est bon
+     */
     @Override
     public boolean add(ISprite sprite) {
         super.add(sprite);

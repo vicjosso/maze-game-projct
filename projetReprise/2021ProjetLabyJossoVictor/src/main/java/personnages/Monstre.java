@@ -5,7 +5,8 @@ import labyrinthe.ISalle;
 import labyrinthe.Salle;
 
 /**
- *
+ * Classe de gestion de Monstre
+ * 
  * @author vjosso
  */
 public class Monstre extends APersonnage{
@@ -14,11 +15,22 @@ public class Monstre extends APersonnage{
     private int cooldown = 5;
     private int frames = 0;
     
+    /**
+     * Constructeur de Monstre
+     * 
+     * @param spawn, position d'apparition du monstre
+     */
     public Monstre(ISalle spawn){
         this.position = spawn;
         this.salleChoisie = spawn;
     }
     
+    /**
+     * Méthodes de sélection de salle de déplacement aléatoire pour le monstre
+     * 
+     * @param sallesAccessibles, liste des salles accessibles
+     * @return la salle choisie
+     */
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles){
         frames++;
@@ -35,6 +47,9 @@ public class Monstre extends APersonnage{
         }
     }
     
+    /**
+     * Choisi un déplacement pour le monstre
+     */
     public void deplacementMonstre(){
         
         int min = 1; 

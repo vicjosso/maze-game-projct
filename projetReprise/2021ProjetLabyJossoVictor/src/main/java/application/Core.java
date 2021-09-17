@@ -19,12 +19,20 @@ public class Core {
     ILabyrinthe labyrinthe;
     private int nbMonstre = 10;
 
+    /**
+     * Initialise le labytinthe
+     */
     protected void initLabyrinthe() {
         // creation du labyrinthe
         labyrinthe = new labyrinthe.Labyrinthe();
         chargementLaby("labys/level3.txt");
     }
 
+    /**
+     * Initialise les sprites
+     * 
+     * @param vue, contexte graphique
+     */
     protected void initSprites(IVue vue) { 
         IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
         this.heros = new HerosSprite(h); //paramètre labyrinthe retiré
@@ -32,6 +40,11 @@ public class Core {
         for(int i = 0; i < nbMonstre; i++) vue.add(new MonstreSprite(new personnages.Monstre(labyrinthe.getSortie()))); //spawn des monstres
     }
 
+    /**
+     * Gère le jeu
+     * 
+     * @param vue, contexte graphique
+     */
     protected void jeu(IVue vue) {
         // boucle principale
         ISalle destination = null;
@@ -69,6 +82,11 @@ public class Core {
         System.out.println("Gagné!");
     }
 
+    /**
+     * Chargement du fichier à partir d'un nom
+     * 
+     * @param fic, nom du fichier 
+     */
     private void chargementLaby(String fic) {
         try {
             labyrinthe.creerLabyrinthe(fic);
@@ -77,6 +95,11 @@ public class Core {
         }
     }
 
+    /**
+     * Gère la vitesse d'éxécution du jeu
+     * 
+     * @param nb, temps de pause en millisecondes
+     */
     protected void temporisation(int nb) {
         try {
             Thread.sleep(nb); // pause de nb millisecondes

@@ -10,13 +10,19 @@ import labyrinthe.Labyrinthe;
 import labyrinthe.Salle;
 
 /**
- *
+ * Classe de gestion de Fichier
+ * 
  * @author INFO Professors team
  */
 public class Fichier {
 
     Scanner sc = null;
 
+    /**
+     * Constructeur de Fichier
+     * 
+     * @param nomFichier 
+     */
     public Fichier(String nomFichier) {
         try {
             sc = new Scanner(new File(nomFichier));
@@ -25,8 +31,11 @@ public class Fichier {
         }
     }
 
-    // retourne le prochain entier dans le fichier
-    // retourne -1 s'il n'y en a pas
+    /**
+     * Lit le nombre suivant d'un fichier
+     * 
+     * @return le nombre si il est présent, sinon renvoie -1
+     */
     public int lireNombre() {
         if (sc.hasNextInt()) {
             return sc.nextInt();
@@ -34,7 +43,13 @@ public class Fichier {
         return -1;
     }
 
-    //refaire la fonction en utilisant this plutot que faire des appels douteux
+    /**
+     * Test la validité d'un fichier de labyrinthe donnéé
+     * 
+     * @param nomfichier, string permettant d'obtenir le fichier
+     * @return vrai si le fichier est conforme
+     * @throws InvalidLabyFileException 
+     */
     public static boolean testValid(String nomfichier) throws InvalidLabyFileException {
 
         try {

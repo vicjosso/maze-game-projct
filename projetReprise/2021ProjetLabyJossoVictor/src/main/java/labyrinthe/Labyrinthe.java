@@ -9,7 +9,8 @@ import outils.Fichier;
 import personnages.IPersonnage;
 
 /**
- *
+ * Classe de gestion de Labyrinthe
+ * 
  * @author INFO Professors team
  */
 public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
@@ -19,6 +20,12 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     private int largeur;
     private int hauteur;
 
+    /**
+     * Créer un labyrinthe à partir d'un nom de fichier
+     * 
+     * @param file, nom du fichier à charger
+     * @throws InvalidLabyFileException 
+     */
     @Override
     public void creerLabyrinthe(String file) throws InvalidLabyFileException{
         Fichier f = new Fichier(file); 
@@ -63,6 +70,12 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         }
     }
 
+    /**
+     * Retourne l'nesemble des positions accessibles à partir de la position d'un personnage
+     * 
+     * @param bob, personnage
+     * @return ensemble des positions accessibles
+     */
     @Override
     public Collection<ISalle> sallesAccessibles(IPersonnage bob) {
         
@@ -77,26 +90,54 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         return sallesAccessibles;
     }
 
+    /**
+     * Retourne l'entrée du labyrinthe
+     * 
+     * @return entrée du labyrinthe
+     */
     @Override
     public ISalle getEntree() {
         return entree;
     }
 
+    /**
+     * Retourne la sortie du labyrinthe
+     * 
+     * @return sortie du labyrinthe
+     */
     @Override
     public ISalle getSortie() {
         return sortie;
     }
 
+    
+    /**
+     * Fonction non implémenté
+     * 
+     * @param u
+     * @param v
+     * @return 
+     */
     @Override
     public Collection<ISalle> chemin(ISalle u, ISalle v) {
         return null;
     }
 
+    /**
+     * Retourne la largeur du labyrinthe
+     * 
+     * @return largeur du labyrinthe
+     */
     @Override
     public int getLargeur() {
         return largeur;
     }
 
+    /**
+     * Retourne la hauteur du labyrinthe
+     * 
+     * @return hauteur du labyrinthe
+     */
     @Override
     public int getHauteur() {
         return hauteur;
