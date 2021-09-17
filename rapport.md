@@ -62,3 +62,9 @@ scéance 12 du 15-09
 	trouver la façon de fluidifié les mvts
 	-objectif scéance suivante:
 	éclairage et murs
+
+scéance 13 du 17-09
+	-fait:
+	javadoc
+	-difficultés:
+	diagramme UML
