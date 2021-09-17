@@ -65,6 +65,8 @@ scéance 12 du 15-09
 
 scéance 13 du 17-09
 	-fait:
-	javadoc
+	javadoc, diagramme UML et de classe
 	-difficultés:
 	diagramme UML
+	-notes:
+	diagramme UML pas fait pour tout le package, remplacer par un diagramme de classe

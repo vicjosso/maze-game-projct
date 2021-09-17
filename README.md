@@ -1,6 +1,6 @@
 # 2021-ProjetReprise-JossoVictor
 -Excercice 1: 06-09
--Excercice 2: 50% de fait
+-Excercice 2: 17-09
 -Excercice 3: 06-09
 -Excercice 4: 06-09
 -Excercice 5: 06-09
