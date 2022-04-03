@@ -1,22 +1,17 @@
-# 2021-ProjetReprise-JossoVictor
--Excercice 1: 06-09
--Excercice 2: 17-09
--Excercice 3: 06-09
--Excercice 4: 06-09
--Excercice 5: 06-09
--Excercice 6: 07-09
--Excercice 7: 07-09
--Excercice 8: 08-09
--Excercice 9: 09-09
--Excercice 10: 09-09
--Excercice 11: 09-09
--Excercice 12: 09-09
--Excercice 13: 09-09
--Excercice 14: 13-09
--Excercice 15: 14-09
--Excercice 16: 14-09
--Excercice 17: 14-09
--Excercice 18: 14-09
--Excercice 19: 15-09
+# Maze game
 
+## English
 
+This project was done at the beginning of my second year as a IT student.
+
+#### Description
+
+The project is a project using JavaFX, we play as a little sprit and our goal is to go to the exit while avoiding monsters.
+
+## Français
+
+Ce projet fut réalisé au début de ma deuxième année en tant qu'étudiant en informatique
+
+#### Description
+
+Ce projet était un projet utilisant JavaFX, on incarne une petite figure et notre rôle est d'atteindre la sortie tout en évitant les monstres.
